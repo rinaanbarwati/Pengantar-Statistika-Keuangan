@@ -1,0 +1,14 @@
+bunga <- function(num, At, k, t, m=TRUE){
+  #num: Pilihan (1: Tunggal atau 2: Majemuk), K: Modal, At: Nilai Akumulasi , t: Periode(waktu)
+  switch(num, 
+         satu = {
+           i = (At/k-1)/t #Tuggal
+         },
+         dua = {
+           i = m*((At/k)^(1/(m*t))-1) #Majemuk Nominal
+         },
+  tiga = {
+    i = log(At/k)/t #Majemuk Kontinu
+  })
+  return(i)
+}
