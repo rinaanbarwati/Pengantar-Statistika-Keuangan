@@ -1,0 +1,14 @@
+presentvalue <- function(num, At, i, t, m=TRUE){
+  switch(num, 
+         satu = {
+           PV = At/(1+i*t) #Tuggal
+         cat("Nilai PV bunga tunggal :",PV)},
+         dua = {
+           PV = (At/(1+(i/m))^(m*t))#Majemuk Nominal
+           cat("Nilai PV bunga majemuk nominal :",PV)
+         },
+         tiga = {
+           PV = At*exp(-i*t) #Majemuk Kontinu
+           cat("Nilai PV bunga majemuk kontinu :",PV)
+         })
+}
