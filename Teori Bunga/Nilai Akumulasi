@@ -1,0 +1,14 @@
+nilaiakumulasi <- function(num, k, i, t, m=TRUE){
+  #num: Pilihan (1: Tunggal atau 2: Majemuk), K: Modal, i: Bunga(desimal) , t: Periode(waktu), m:banyak pembayaran bunga dalam 1 thun
+  switch(num, 
+         satu = {
+           At = k*(1+i*t) #Tuggal
+         },
+         dua = {
+           At = k*(1+i/m)^(m*t) #Majemuk nominal
+         },
+  tiga = {
+    At = k*exp(i*t) #Majemuk kontinu
+  })
+  return(At)
+}
