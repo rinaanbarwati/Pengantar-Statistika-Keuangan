@@ -1,0 +1,17 @@
+annuitas <- function(num, k, i, t, m=TRUE){
+  n = m*t
+  j = i/m
+  v = (1+j)^-1
+  switch(num, 
+         satu = {
+           An = k*(1-v^n)/j 
+           Sn = k*((1+j)^n-1)/j
+           cat("Present Value untuk Annuitas Akhir :",An, "\n")
+           cat("Nilai Akumulasi untuk Annuitas Akhir :",Sn, "\n")},
+         dua = {
+           An = k*(1-v^n)/(j*v)
+           Sn = k*((1+j)^n-1)/(j*v)
+           cat("Present Value untuk Annuitas Awal :",An, "\n")
+           cat("Nilai Akumulasi untuk Annuitas Awal :",Sn)
+         })
+}
